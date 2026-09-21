@@ -1,0 +1,220 @@
+:root {
+  --color-bg: #f7f8f9;
+  --color-surface: #ffffff;
+  --color-border: #e4e7eb;
+  --color-text: #1c1e21;
+  --color-text-muted: #5b6470;
+  --color-accent: #1f7a6c;
+  --color-accent-dark: #16594f;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* ---------- App shell / top bar ---------- */
+
+body.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.username {
+  color: var(--color-text-muted);
+}
+
+.logout-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  color: var(--color-accent-dark);
+}
+
+/* ---------- Main app content ---------- */
+
+.app-main {
+  max-width: 760px;
+  padding: 48px 20px 80px;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.recipe-form {
+  margin-bottom: 48px;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* ---------- Recipe list ---------- */
+
+.recipe-list {
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.recipe-row:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.recipe-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.recipe-title {
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.recipe-title:hover {
+  color: var(--color-accent);
+}
+
+.recipe-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.recipe-meta span:not(:last-child)::after {
+  content: "\00b7";
+  margin-left: 10px;
+  color: var(--color-border);
+}
+
+.recipe-notes {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.recipe-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ---------- Login page ---------- */
+
+.login-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card .brand {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.login-copy {
+  color: var(--color-text-muted);
+  margin: 8px 0 24px;
+}
+
+.btn-github {
+  width: 100%;
+}
+
+/* Upping the contrast on this for accessibility score */
+
+.recipe-actions .btn-outline-secondary {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.recipe-actions .btn-outline-secondary:hover,
+.recipe-actions .btn-outline-secondary:focus {
+  background: var(--color-text);
+  color: #fff;
+}
+
+.recipe-actions .btn-outline-danger {
+  color: #b3261e;
+  border-color: #b3261e;
+}
+
+.recipe-actions .btn-outline-danger:hover,
+.recipe-actions .btn-outline-danger:focus {
+  background: #b3261e;
+  color: #fff;
+}
