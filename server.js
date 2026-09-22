@@ -36,7 +36,7 @@ app.use( passport.session() )
 passport.use( new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: 'http://localhost:3000/auth/github/callback' // hardcoding this, should be fine??
+  callbackURL: 'https://a4-will-schieffer.onrender.com/auth/github/callback' // hardcoding this, should be fine??
 }, async function( accessToken, refreshToken, profile, done ) {
   try {
     const existing = await users.findOne( { githubId: profile.id } )
