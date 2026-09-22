@@ -36,7 +36,7 @@ app.use( passport.session() )
 passport.use( new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: 'https://a3-will-schieffer.onrender.com/auth/github/callback' // hardcoding this, should be fine??
+  callbackURL: 'http://localhost:3000/auth/github/callback' // hardcoding this, should be fine??
 }, async function( accessToken, refreshToken, profile, done ) {
   try {
     const existing = await users.findOne( { githubId: profile.id } )
@@ -92,7 +92,7 @@ function ensureAuthenticatedAPI( request, response, next ) {
 app.use( express.static( dir, { index: false } ) )
 
 app.get( '/', ensureAuthenticated, function( request, response ) {
-  response.sendFile( __dirname + '/' + dir + 'index.html' )
+  response.sendFile( __dirname + '/' + dir + 'dist/index.html' )
 })
 
 app.get( '/auth/github', passport.authenticate( 'github' ) )

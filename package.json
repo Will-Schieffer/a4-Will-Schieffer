@@ -1,10 +1,11 @@
 {
-  "name": "a3-will-schieffer",
-  "version": "2.0.0",
+  "name": "a4-will-schieffer",
+  "version": "2.1.0",
   "description": "A simple recipe pinner app",
   "author": "Will Schieffer",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "vite build"
   },
   "dependencies": {
     "compression": "^1.8.2",
@@ -16,7 +17,13 @@
     "mongodb": "^7.6.0",
     "morgan": "^1.12.1",
     "passport": "^0.7.0",
-    "passport-github2": "^0.1.12"
+    "passport-github2": "^0.1.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
   },
   "engines": {
     "node": "24.x"
